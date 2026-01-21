@@ -124,7 +124,44 @@ contains
             A(i,i) = 1.0d0  ! Diagonal principal = 1
         end do
         
-        A(1,4) = 1/ COMPLII(1)
+        A(1,4) = 1/COMPLII(1)
+        A(1,10) = 1/COMPLII(1)
+        A(1,16) = 1/COMPLII(1)
+        A(2,1) = 1/INDUCTI(1)
+        A(2,4) = -RESISTI(1)/INDUCTI(1)
+        A(2,10) = -RESISTI(1)/INDUCTI(1)
+        A(2,16) = -RESISTI(1)/INDUCTI(1)
+        A(3,4) = 1/COMPLII(2)
+        A(3,6) = -1/COMPLII(2)
+        A(3,8) = -1/COMPLII(2)
+        A(4,1) = 1/INDUCTI(2)
+        A(4,3) = -1/INDUCTI(2)
+        A(4,4) = -RESISTI(2)/INDUCTI(2)
+        A(5,6) = 1/COMPLII(3)
+        A(6,5) = 1/INDUCTI(3)
+        A(6,6) = -RESISTI(3)/INDUCTI(3)
+        A(7,8) = 1/COMPLII(4)
+        A(8,7) = 1/INDUCTI(4)
+        A(8,8) = -RESISTI(4)/INDUCTI(4)
+        A(9,10) = 1/COMPLII(5)
+        A(9,12) = -1/COMPLII(5)
+        A(9,14) = -1/COMPLII(5)
+        A(10,1) = -1/INDUCTI(5)
+        A(10,9) = -1/INDUCTI(5)
+        A(10,10) = -RESISTI(5)/INDUCTI(5)
+        A(11,12) = 1/COMPLII(6)
+        A(12,11) = 1/INDUCTI(6)
+        A(12,12) = -RESISTI(6)/INDUCTI(6)
+        A(13,14) = 1/COMPLII(7)
+        A(14,13) = 1/INDUCTI(7)
+        A(14,14) = -RESISTI(7)/INDUCTI(7)
+        A(15,16) = 1/COMPLII(8)
+        A(15,18) = -1/COMPLII(8)
+        A(15,20) = -1/COMPLII(8)
+        A(16,1) = 1/INDUCTI(8)
+        A(16,15) = -1/INDUCTI(8)
+        A(16,18) = -RESISTI(8)/INDUCTI(8)
+        A(16,20) = -RESISTI(8)/INDUCTI(8)
 
         ! Vetor b pré-definido (valores específicos para cada elemento)
         if (n >= 1) b(1) = 1.0d0
@@ -363,3 +400,4 @@ program ZERODMOD
     print *, "  1. resultados_completos.txt (TODOS OS RESULTADOS)"
     print *, "  2. propriedades_elementos.txt"
 end program ZERODMOD
+
