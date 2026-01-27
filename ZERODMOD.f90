@@ -347,8 +347,95 @@ contains
         A(90,89) = -1/INDUCTI(45)
         A(90,92) = -RESISTI(45)/INDUCTI(45)
         A(90,94) = -RESISTI(45)/INDUCTI(45)
-            
+        A(91,92) = 1/COMPLII(46) 
+        A(92,91) = 1/INDUCTI(46) 
+        A(92,92) = -RESISTI(46)/INDUCTI(46)
+        A(93,94) = 1/COMPLII(47) 
+        A(93,96) = -1/COMPLII(47) 
+        A(93,98) = -1/COMPLII(47) 
+        A(94,89) = 1/INDUCTI(47)
+        A(94,93) = -1/INDUCTI(47)
+        A(94,96) = -RESISTI(47)/INDUCTI(47)
+        A(94,98) = -RESISTI(47)/INDUCTI(47)
+        A(95,96) = 1/COMPLII(48)
+        A(95,100) = -1/COMPLII(48)
+        A(95,102) = -1/COMPLII(48)
+        A(96,93) = 1/INDUCTI(48)
+        A(96,95) = -1/INDUCTI(48)
+        A(96,100) = -RESISTI(48)/INDUCTI(48)
+        A(96,102) = -RESISTI(48)/INDUCTI(48)
+        A(97,98) = 1/COMPLII(49)
+        A(97,112) = -1/COMPLII(49)
+        A(97,114) = -1/COMPLII(49)
+        A(98,93) = 1/INDUCTI(49)
+        A(98,97) = -1/INDUCTI(49)
+        A(98,112) = -RESISTI(49)/INDUCTI(49)
+        A(98,114) = -RESISTI(49)/INDUCTI(49)
+        A(99,100) = 1/COMPLII(50)
+        A(99,104) = -1/COMPLII(50)
+        A(99,106) = -1/COMPLII(50)
+        A(100,96) = 1/INDUCTI(50)
+        A(100,96) = -1/INDUCTI(50)
+        A(100,104) = -RESISTI(50)/INDUCTI(50)
+        A(100,106) = -RESISTI(50)/INDUCTI(50)
+        A(101,102) = 1/COMPLII(51)
+        A(102,101) = 1/INDUCTI(51)
+        A(102,102) = -RESISTI(51)/INDUCTI(51)
+        A(103,104) = 1/COMPLII(52)
+        A(103,108) = -1/COMPLII(52)
+        A(103,110) = -1/COMPLII(52)
+        A(104,100) = 1/INDUCTI(52)
+        A(104,104) = -1/INDUCTI(52)
+        A(104,108) = -RESISTI(52)/INDUCTI(52)
+        A(104,110) = -RESISTI(52)/INDUCTI(52)
+        A(105,106) = 1/COMPLII(53)
+        A(106,105) = 1/COMPLII(53)
+        A(106,106) = -RESISTI(53)/INDUCTI(53)
+        A(107,108) = 1/COMPLII(54)
+        A(108,108) = 1/INDUCTI(54)
+        A(108,108) = -RESISTI(54)/INDUCTI(54)
+        A(109,110) = 1/COMPLII(55)
+        A(110,109) = 1/INDUCTI(55)
+        A(110,110) = -RESISTI(55)/INDUCTI(55)
+        A(111,111) = 1/COMPLII(56)
+        A(111,116) = -1/COMPLII(56)
+        A(111,118) = -1/COMPLII(56)
+        A(112,88) = 1/INDUCTI(56)
+        A(112,111) = -1/INDUCTI(56)
+        A(112,116) = -RESISTI(56)/INDUCTI(56)
+        A(112,118) = -RESISTI(56)/INDUCTI(56)
+        A(113,114) = 1/COMPLII(57)
+        A(114,113) = 1/INDUCTI(57)
+        A(114,114) = -RESISTI(57)/INDUCTI(57)
+        A(115,116) = 1/COMPLII(58)
+        A(115,120) = -1/COMPLII(58)
+        A(115,122) = -1/COMPLII(58)
+        A(116,111) = 1/INDUCTI(58)
+        A(116,115) = -1/INDUCTI(58)
+        A(116,120) = -RESISTI(58)/INDUCTI(58)
+        A(116,122) = -RESISTI(58)/INDUCTI(58)
+        A(117,118) = 1/COMPLII(59)
+        A(118,117) = 1/INDUCTI(59)
+        A(118,118) = -RESISTI(59)/INDUCTI(59)
+        A(119,120) = 1/COMPLII(60)
+        A(120,119) = 1/INDUCTI(60)
+        A(120,120) = -RESISTI(60)/INDUCTI(60)
+        A(121,122) = 1/COMPLII(61)
+        A(122,121) = 1/INDUCTI(61)
+        A(122,122) = -RESISTI(61)/INDUCTI(61)
         
+        
+        
+        
+        
+        
+        
+
+
+        
+
+
+
 
 
 
@@ -591,6 +678,7 @@ program ZERODMOD
     print *, "  1. resultados_completos.txt (TODOS OS RESULTADOS)"
     print *, "  2. propriedades_elementos.txt"
 end program ZERODMOD
+
 
 
 
