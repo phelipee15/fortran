@@ -122,8 +122,8 @@ contains
         A = 0.0d0
         do i = 1, n
             A(i,i) = 1.0d0  ! Diagonal principal = 1
-        end do
-        
+
+        ! COEFICIENTES NÃO NULOS DA MATRIZ A
         A(1,4) = 1/COMPLII(1)
         A(1,10) = 1/COMPLII(1)
         A(1,16) = 1/COMPLII(1)
@@ -200,6 +200,63 @@ contains
         A(28,27) = -1/INDUCTI(14)
         A(28,30) = -RESISTI(14)/INDUCTI(14)
         A(28,32) = -RESISTI(14)/INDUCTI(14)
+        A(29,30) = 1/COMPLI(15)
+        A(30,29) = 1/INDUCTI(15)
+        A(30,30) = -RESISTI(15)/INDUCTI(15)
+        A(31,32) = 1/COMPLI(16)
+        A(31,34) = -1/COMPLI(16)
+        A(31,36) = -1/COMPLI(16)
+        A(32,27) = 1/INDUCTI(16)
+        A(32,31) = -1/INDUCTI(16)
+        A(32,34) = -RESISTI(16)/INDUCTI(16)
+        A(32,36) = -RESISTI(16)/INDUCTI(16)
+        A(33,34) = 1/COMPLI(17)
+        A(34,33) = 1/INDUCTI(17)
+        A(34,34) = -RESISTI(17)/INDUCTI(17)
+        A(35,36) = 1/COMPLI(18)
+        A(36,35) = 1/INDUCTI(18)
+        A(36,36) = -RESISTI(18)/INDUCTI(18)
+        A(37,38) = 1/COMPLI(19)
+        A(38,37) = 1/INDUCTI(19)
+        A(38,38) = -RESISTI(19)/INDUCTI(19)
+        A(39,40) = 1/COMPLI(20)
+        A(40,39) = 1/INDUCTI(20)
+        A(40,40) = -RESISTI(20)/INDUCTI(20)
+        A(41,42) = 1/COMPLI(21)
+        A(41,50) = -1/COMPLI(21)
+        A(41,52) = -1/COMPLI(21)
+        A(42,17) = 1/INDUCTI(21)
+        A(42,41) = -1/INDUCTI(21)
+        A(42,50) = -RESISTI(21)/INDUCTI(21)
+        A(42,52) = -RESISTI(21)/INDUCTI(21)
+        A(43,44) = 1/COMPLI(22)
+        A(43,46) = -1/COMPLI(22)
+        A(43,48) = -1/COMPLI(22)
+        A(44,17) = 1/INDUCTI(22)
+        A(44,43) = -1/INDUCTI(22)
+        A(44,46) = -RESISTI(22)/INDUCTI(22)
+        A(44,48) = -RESISTI(22)/INDUCTI(22)
+        A(45,46) = 1/COMPLI(23)
+        A(46,45) = 1/INDUCTI(23)
+        A(46,46) = -RESISTI(23/INDUCTI(23)
+        A(47,48) = 1/COMPLI(24)
+        A(48,47) = 1/INDUCTI(24)
+        A(48,48) = -RESISTI(24)/INDUCTI(24)
+        A(49,50) = 1/COMPLI(25)
+        A(49,68) = -1/COMPLI(25)
+        A(49,66) = -1/COMPLI(25)
+        A(50,41) = 1/INDUCTI(25)
+        A(50,49) = -1/INDUCTI(25
+        A(50,66) = -RESISTI(25)/INDUCTI(25)
+        A(50,68) = -RESISTI(25)/INDUCTI(25)
+        A(51,52) = 1/COMPLI(26)
+        A(51,54) = -1/COMPLI(26)
+        A(51,56) = -1/COMPLI(26)
+        A(52,48) = 1/INDUCTI(26)
+        A(52,51) = -1/INDUCTI(26)
+        A(52,54) = -RESISTI(26)/INDUCTI(26)
+        A(52,56)  = -RESISTI(26)/INDUCTI(26)
+
 
         ! Vetor b pré-definido (valores específicos para cada elemento)
         if (n >= 1) b(1) = 1.0d0
@@ -438,5 +495,6 @@ program ZERODMOD
     print *, "  1. resultados_completos.txt (TODOS OS RESULTADOS)"
     print *, "  2. propriedades_elementos.txt"
 end program ZERODMOD
+
 
 
