@@ -90,14 +90,14 @@ contains
         TI = IT * HT
         
         if (TI <= TS) then
-            PIN = PD + ((PS - PD) / TS) * TI
+            PIN = (PD + ((PS - PD) / TS) * TI)* 1333.22
             QIN = QMAX * (SIN(PI * TI / TS))**2
         endif
 
         if (TI > TS .and. TI <= TCC) then
             A = (PS - PD) / (TS - TCC)
             B = (PD * TS - PS * TCC) / (TS - TCC)
-            PIN = A * TI + B
+            PIN = (A * TI + B) * 1333.22
             QIN = 0.0d0
         endif
     end subroutine PULSOPQ
@@ -839,3 +839,4 @@ program ZERODMOD
     deallocate(resultados)
     
 end program ZERODMOD
+
