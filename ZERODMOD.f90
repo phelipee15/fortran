@@ -661,7 +661,6 @@ contains
         call PULSOPQ(IT, HT, PI, PIN, QIN)
         b(1) = PIN
         b(2) = QIN
-        print *, b
 
     end subroutine FORMAB
 
@@ -720,7 +719,7 @@ program ZERODMOD
     real(kind=8), dimension(:,:), allocatable :: resultados
     
     ! Índices dos trechos que queremos monitorar
-    indices = (/19, 23, 20, 24, 52, 58/)
+    indices = (/19, 20, 23, 24, 52, 58/)
     
     write(*,'(A)') '========================================================'
     write(*,'(A)') '           SIMULACAO ZERODMOD - INICIANDO'
@@ -736,11 +735,11 @@ program ZERODMOD
     write(*,'(A)') 'Propriedades geometricas calculadas e salvas.'
     write(*,*)
     
-    HT = 0.01d0
+    HT = 0.0001d0
     TT = 1.0d0
     NT = int(TT / HT)
     
-    allocate(resultados(NT+1, 13))  ! tempo + 4 trechos × 2 variáveis (P e Q)
+    allocate(resultados(NT+1, 1+4*2))  ! tempo + 4 trechos × 2 variáveis (P e Q)
     
     x_old = 0.0d0
     x_new = 0.0d0
@@ -761,7 +760,7 @@ program ZERODMOD
         
         ! Armazena resultados para os trechos de interesse
         resultados(IT+1, 1) = tempo
-        do k = 1, 4
+        do k = 1, 6
             j = indices(k)
             ! Pressão no trecho j está na posição 2*j-1
             ! Vazão no trecho j está na posição 2*j
@@ -785,7 +784,7 @@ program ZERODMOD
     open(unit=30, file='resultados_simulacao.csv', status='replace', action='write', iostat=ios)
     if (ios /= 0) stop "ERRO: Nao foi possivel criar arquivo de resultados."
     
-    write(30,'(A)') 'tempo,P_16,Q_16,P_30,Q_30,P_48,Q_48,P_49,Q_49'
+    write(30,'(A)') 'tempo,P_19,Q_19,P_20,Q_20,P_23,Q_23,P_24,Q_24,P_52,Q_52,P_58,Q_58'
     
     do IT = 1, NT+1
         write(30,'(ES15.8,8(A,ES15.8))') resultados(IT,1), &
@@ -811,7 +810,7 @@ program ZERODMOD
     write(31,'(A,F12.8)') 'Viscosidade (MI)   : ', MI
     write(31,'(A,F12.6)') 'Densidade (RO)     : ', RO
     write(31,'(A,F12.10)')'Pi                 : ', PI
-    write(31,'(A)') 'Indices monitorados    : 16, 30, 48, 49'
+    write(31,'(A)') 'Indices monitorados    : 19, 20, 23, 24, 52, 58'
     write(31,'(A)') '================================================================'
     write(31,'(A)') ''
     write(31,'(A)') 'Estrutura do vetor de estado:'
@@ -820,10 +819,12 @@ program ZERODMOD
     write(31,'(A)') ''
     write(31,'(A)') 'Colunas no arquivo CSV:'
     write(31,'(A)') '  1: tempo'
-    write(31,'(A)') '  2-3:  P_16, Q_16'
-    write(31,'(A)') '  4-5:  P_30, Q_30'
-    write(31,'(A)') '  6-7:  P_48, Q_48'
-    write(31,'(A)') '  8-9:  P_49, Q_49'
+    write(31,'(A)') '  2-3:  P_19, Q_19'
+    write(31,'(A)') '  4-5:  P_20, Q_20'
+    write(31,'(A)') '  6-7:  P_23, Q_23'
+    write(31,'(A)') '  8-9:  P_24, Q_24'
+    write(31,'(A)') '  10-11:  P_52, Q_52'
+    write(31,'(A)') '  12-13:  P_58, Q_58'
     write(31,'(A)') '================================================================'
     
     close(31)
@@ -839,5 +840,3 @@ program ZERODMOD
     deallocate(resultados)
     
 end program ZERODMOD
-
-
