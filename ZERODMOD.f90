@@ -711,7 +711,7 @@ program ZERODMOD
     implicit none
     
     integer :: n, IT, NT, i, j, k, ios
-    integer, dimension(4) :: indices
+    integer, dimension(6) :: indices
     real(kind=8) :: MI, RO, PI, HT, TT, tempo
     real(kind=8), dimension(:), allocatable :: COMPI, RAIOI, ESPHI, MEY
     real(kind=8), dimension(:), allocatable :: RESISTI, INDUCTI, COMPLII
@@ -720,7 +720,7 @@ program ZERODMOD
     real(kind=8), dimension(:,:), allocatable :: resultados
     
     ! Índices dos trechos que queremos monitorar
-    indices = (/16, 30, 48, 49/)
+    indices = (/19, 23, 20, 24, 52, 58/)
     
     write(*,'(A)') '========================================================'
     write(*,'(A)') '           SIMULACAO ZERODMOD - INICIANDO'
@@ -740,7 +740,7 @@ program ZERODMOD
     TT = 1.0d0
     NT = int(TT / HT)
     
-    allocate(resultados(NT+1, 1+4*2))  ! tempo + 4 trechos × 2 variáveis (P e Q)
+    allocate(resultados(NT+1, 13))  ! tempo + 4 trechos × 2 variáveis (P e Q)
     
     x_old = 0.0d0
     x_new = 0.0d0
@@ -839,4 +839,5 @@ program ZERODMOD
     deallocate(resultados)
     
 end program ZERODMOD
+
 
